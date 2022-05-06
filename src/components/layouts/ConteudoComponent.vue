@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>Conteúdo</p>
+    <h1>Componente Conteúdo</h1>
     <home></home>
     <publicar-vaga></publicar-vaga>
   </div>
@@ -20,6 +20,8 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
-
+<style scoped>
+ h1 {
+   color: green;
+ }
 </style>
