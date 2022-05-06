@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import Conteudo from './components/layouts/ConteudoComponent.vue'
-import TopoPadrao from './components/layouts/TopoPadrao.vue'
+import Conteudo from '@/components/layouts/ConteudoComponent.vue'
+import TopoPadrao from '@/components/layouts/TopoPadrao.vue'
 
 export default {
   name: 'App',
@@ -20,7 +20,5 @@ export default {
 </script>
 
 <style scoped>
-  h1 {
-    color: red;
-  }
+  
 </style>
