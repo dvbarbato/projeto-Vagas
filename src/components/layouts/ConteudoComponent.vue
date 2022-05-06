@@ -17,7 +17,49 @@ export default {
   components: {
     Home,
     PublicarVaga
-  }
+  },
+  methods: {
+
+  },
+  // beforeCreate() {
+  //   console.log('antes de criar')
+  // },
+  // created() {
+  //   console.log('criado')
+  // },
+  // beforeMount(){
+  //   console.log('antes de montar')
+  // },
+  // mounted() {
+  //   console.log('montado')
+  // },
+  // beforeUpdate() {
+  //   console.log('antes de atualizar')
+  // },
+  // updated() {
+  //   console.log('atualizado')
+  // },
+  // beforeUnmount() {
+  //   console.log('Antes de desmontar/destruir')
+  // },
+  // unmounted() {
+  //   console.log('Desmontado/ Destruido')
+  // },
+  // errorCaptured: () => {
+  //   console.log('Erro Capturado')
+  // },
+  // renderTracked() {
+  //   console.log('Re-renderização rastreada')
+  // },
+  // renderTriggered() {
+  //   console.log('Re-renderização é acionada')
+  // },
+  // activated() {
+  //   console.log('Componente é ativado')
+  // },
+  // deactivated() {
+  //   console.log('Componente é desativado')
+  // },
   
 }
 </script>
