@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>Single file Component</p>
+    <p>Conteúdo</p>
   </div>
 </template>
 
