@@ -5,6 +5,22 @@
         <pesquisar-vaga></pesquisar-vaga>
       </div>
     </div>
+
+    <div class="row mt-5">
+      <div class="col-6">
+        <vaga />
+      </div>
+      <div class="col-6">
+        <vaga />
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col">
+        <vaga />
+      </div>
+    </div>
+
     <div class="row mt-5">
       <div class="col-4">
         <indicador-vaga titulo="Vagas abertas" indicador="100" bg="bg-dark" color="text-white"></indicador-vaga>
@@ -24,10 +40,14 @@
 <script>
 import IndicadorVaga from '@/components/comuns/IndicadorVaga.vue'
 import PesquisarVaga from '@/components/comuns/PesquisarVaga.vue'
+import VagaComuns from '@/components/comuns/VagaComuns.vue'
+
+
 export default {
   components: {
     IndicadorVaga,
-    PesquisarVaga
+    PesquisarVaga,
+    vaga:VagaComuns
   },
   data: () => ({
     usuariosOnline: 0
