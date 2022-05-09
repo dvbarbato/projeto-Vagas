@@ -1,11 +1,13 @@
 <template>
   <div>
-    <h1>Componente Conteúdo</h1>
-    <p>Conteudo - Propriedade $style: {{$style}}</p>
-    <div :class="$style['teste1']">Classe Teste1</div>
-    <div :id="$style['teste2']">ID Teste 2</div>
-    <home></home>
-    <publicar-vaga></publicar-vaga>
+    <h1>{{ titulo }}</h1>
+    <button @click="atualizarComponente()">Atualizar</button>
+    <button @click="conteudo = 'home'">Home</button>
+    <button @click="conteudo = 'publicar-vaga' ">Publicar Vaga</button>
+    <!-- Renderizar de modo dinamico os componentes home e publicar-vaga -->
+    <!-- <home></home> -->
+    <!-- <publicar-vaga></publicar-vaga> -->
+    <component :is="conteudo"></component>
   </div>
 </template>
 
@@ -19,8 +21,16 @@ export default {
     PublicarVaga
   },
   methods: {
-
+    atualizarComponente() {
+      this.titulo += '*'
+    }
   },
+  // Atributo = data
+  data: () => ({
+    teste: 'O componente foi criado',
+    titulo: 'Componente Conteúdo!!',
+    conteudo: 'home'
+  })
   // beforeCreate() {
   //   console.log('antes de criar')
   // },
