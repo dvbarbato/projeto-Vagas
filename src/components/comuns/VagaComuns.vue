@@ -22,21 +22,37 @@ export default {
     name: 'VagaComuns',
     //props: ['titulo', 'descricaoVaga', 'salario', 'modalidade', 'tipo', 'publicacao'],
     props: {
-        titulo: String,
-        descricaoVaga: String,
-        salario: [Number, String],
-        modalidade: String,
-        tipo: String,
-        publicacao: String
+        titulo: {
+            type: String,
+            required: true,
+            validator(p) {
+                console.log('Prop: ', p)
+                if(p.length < 6 ) return false
+                return true
+            }
+        },
+        descricaoVaga: {
+            type: String,
+            required: true,
+            
+        },
+        salario: {
+            type: [Number, String],
+            required: true
+        }, 
+        modalidade: {
+            type: String,
+            required: true
+        },
+        tipo: {
+            type: String,
+            required: true 
+        },
+        publicacao: {
+            type: String,
+            required: true
+        }    
     },
-    created() {
-        console.log('titulo',typeof this.titulo)
-        console.log('descricaoVaga', typeof this.descricaoVaga)
-        console.log('salario',typeof this.salario)
-        console.log('modalidade',typeof this.modalidade)
-        console.log('tipo',typeof this.tipo)
-        console.log('publicacao',typeof this.publicacao)
-    }
 }
 
 </script>
