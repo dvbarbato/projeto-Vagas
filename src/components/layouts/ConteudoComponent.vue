@@ -7,7 +7,10 @@
     <!-- Renderizar de modo dinamico os componentes home e publicar-vaga -->
     <!-- <home></home> -->
     <!-- <publicar-vaga></publicar-vaga> -->
-    <component :is="conteudo"></component>
+
+    <keep-alive>
+      <component :is="conteudo"></component>
+    </keep-alive>
   </div>
 </template>
 
@@ -76,11 +79,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style module>
- .teste1 {
-   background-color: red;
- }
- #teste2 {
-   background-color: yellow;
- }
+
  
 </style>
