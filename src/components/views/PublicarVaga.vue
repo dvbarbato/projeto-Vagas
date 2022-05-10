@@ -72,24 +72,29 @@ export default {
     descricao: '',
     salario: '',
     modalidade: '',
-    tipo: ''
+    tipo: '',
+  
   }),
   methods: {
     salvarVaga() {
 
+      let tempoDecorrido = Date.now()
+      let dataAtual = new Date(tempoDecorrido)
+       
+
       let vagas = JSON.parse(localStorage.getItem('vagas'))
-      console.log(vagas)
+      //console.log(vagas)
       
       if(!vagas) vagas = []
 
-      let vaga = {
-        titulo: this.titulo,
+      vagas.push({
+         titulo: this.titulo,
          descricao: this.descricao,
          salario: this.salario,
          modalidade: this.modalidade,
-         tipo: this.tipo
-      }
-      vagas.push(vaga)
+         tipo: this.tipo,
+         publicacao: dataAtual.toISOString()
+      })
 
       localStorage.setItem('vagas', JSON.stringify(vagas))
     }
