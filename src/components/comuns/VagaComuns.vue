@@ -26,7 +26,7 @@ export default {
             type: String,
             required: true,
             validator(p) {
-                console.log('Prop: ', p)
+                //console.log('Prop: ', p)
                 if(p.length < 6 ) return false
                 return true
             }
