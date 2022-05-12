@@ -1,5 +1,5 @@
 <template>
-    <div class="alert alert-success" role="alert">
+    <div :class="estiloAlerta" role="alert">
         <slot name="titulo">
             <h3>Título da mensagem de feddback</h3>
         </slot>
@@ -12,6 +12,16 @@
 
 <script>
 export default {
-    name: 'AlertaRegistro'
+    name: 'AlertaRegistro',
+    props: { tipo: String },
+    computed: {
+        estiloAlerta() {
+            switch(this.tipo) {
+                case 'erro': return 'alert alert-danger'
+                case 'sucesso': return 'alert alert-success'
+                default: return 'alert alert-success'
+            }
+        }
+    }
 }
 </script>
