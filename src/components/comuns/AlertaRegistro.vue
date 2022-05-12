@@ -1,6 +1,6 @@
 <template>
-    <div class="alert alert-success" role="alert">
-        Mensagem de Alerta (feddback)
+    <div>
+        <slot></slot>
     </div>
 </template>
 
