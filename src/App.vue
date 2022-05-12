@@ -3,11 +3,12 @@
     <vagas-favoritas></vagas-favoritas>
     <topo-padrao @navegar="componente = $event"/>
     <alerta v-if="exibirAlerta">
-      <div class="alert alert-success" role="alert">
+      <template v-slot:titulo>
         <h5>Título do alerta</h5>
-        <hr>
+      </template>
+      <template v-slot:descricao>
         <p>Descrição do alerta</p>
-    </div>
+      </template>
     </alerta>
     <conteudo v-if="visibilidade" :conteudo="componente"></conteudo>
   </div>
