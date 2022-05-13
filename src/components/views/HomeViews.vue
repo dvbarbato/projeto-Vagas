@@ -6,11 +6,22 @@
       </div>
     </div>
 
-    <div class="row mt-5" v-for="(vaga, index) in vagas" :key="index">
-      <div class="col">
-        <vaga v-bind="vaga"/>
-      </div>
-    </div>
+    <lista-vagas>
+      <!-- <template v-slot:titulo="slotProps">
+        {{slotProps.dadosTitulo.titulo}}
+        <hr>
+      </template>
+
+      <template v-slot:default="slotProps">
+        {{slotProps.vagas}}
+        <hr>
+      </template>
+
+      <template v-slot:rodape="slotProps">
+        {{slotProps.dadosRodape.titulo}}
+        <hr>
+      </template> -->
+    </lista-vagas>
 
     <div class="row mt-5">
       <div class="col-4">
@@ -30,19 +41,21 @@
 
 <script>
 import IndicadorVaga from '@/components/comuns/IndicadorVaga.vue'
+import ListaVagas from '@/components/comuns/ListaVagas.vue'
 import PesquisarVaga from '@/components/comuns/PesquisarVaga.vue'
-import VagaComuns from '@/components/comuns/VagaComuns.vue'
+
 
 
 export default {
   components: {
     IndicadorVaga,
+    ListaVagas,
     PesquisarVaga,
-    vaga:VagaComuns
+    
   },
   data: () => ({
     usuariosOnline: 0, 
-    vagas: []
+    
   }),
   methods: {
     getUsuariosOnline() {
@@ -51,21 +64,7 @@ export default {
   },
   created() {
     setInterval(this.getUsuariosOnline, 2000)
-  },
-
- activated() {
-    this.vagas = JSON.parse(localStorage.getItem('vagas'))
-  },
-
-  mounted() {
-    this.emitter.on('filtrarVagas', vaga => {
-
-      const vagas = JSON.parse(localStorage.getItem('vagas'))
-      this.vagas = vagas.filter(reg => reg.titulo.toLowerCase().includes(vaga.titulo.toLowerCase())) //true ou false: O método filter cria um novo array com todos os elementos que passaram no teste implementado na função
-      
-    })
-  }
-  
+  }  
 }
 </script>
 
